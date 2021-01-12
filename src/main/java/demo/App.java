@@ -15,6 +15,11 @@ public class App {
         System.out.println(o.getClass().getName());
 
         ArrayList<String> list1 = new ArrayList<>();
+        try {
+            list1.getClass().getDeclaredMethod("add", Object.class).invoke(list1, 1);
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
         ArrayList<Integer> list2 = new ArrayList<>();
         System.out.println(list1.getClass().getName());
         System.out.println(list2.getClass().getName());
