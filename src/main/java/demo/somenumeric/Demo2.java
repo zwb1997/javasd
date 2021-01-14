@@ -19,10 +19,10 @@ public class Demo2 {
         d22.setAge(1);
         System.out.println(d21.equals(d22));
         System.out.println(42 == 42.0);
-        var a = 123.321D;
-        var b = 123.321f;
-        System.out.println(a);
-        System.out.println(a);
+        // var a = 123.321D;
+        // var b = 123.321f;
+        // System.out.println(a);
+        // System.out.println(a);
 
         Integer aa = 1;
         Integer bb = 2;
