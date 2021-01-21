@@ -1,5 +1,6 @@
 package demo.abouthashandequals.demo1;
 
+import java.nio.CharBuffer;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -60,5 +61,17 @@ class DemoClass {
         }
         DemoClass theObject = (DemoClass) obj;
         return this.theWord.equals(theObject.theWord);
+    }
+
+    @Override
+    public int hashCode() {
+        StringBuilder sBuilder = new StringBuilder();
+        String curWord = this.theWord.length() > 4 ? sBuilder.append(this.theWord).substring(0, 4) : this.theWord;
+        sBuilder.delete(0, sBuilder.length());
+        for (char c : curWord.toCharArray()) {
+            sBuilder.append(c % 100 + 0);
+        }
+        int curHash = Integer.parseInt(sBuilder.toString());
+        return curHash;
     }
 }
