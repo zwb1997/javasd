@@ -17,7 +17,8 @@ interface DemoInterface {
 public class Run {
 
     public static void main(String[] args) {
-        Person p1 = new Person("Daming", LocalDate.of(2000, Month.JULY, 1), Person.Sex.MALE, "asdas@qq.com");
+        Person p1 = new Person("Daming", LocalDate.of(2000, Month.JULY, 1), 
+        Person.Sex.MALE, "asdas@qq.com");
         Person p2 = new Person("Hanmeimei", LocalDate.of(2001, Month.AUGUST, 12), Person.Sex.FAMALE, "asdas@qq.com");
         List<Person> persons = new ArrayList<>();
         persons.add(p1);

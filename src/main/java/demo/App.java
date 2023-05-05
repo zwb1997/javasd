@@ -1,7 +1,6 @@
 package demo;
 
 import java.util.ArrayList;
-
 /**
  * Hello world!
  *

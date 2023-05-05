@@ -31,11 +31,29 @@ public class Demo1 {
     // public static void main(String[] args) throws Exception {
     public static void main(String[] args) {
 
-        Demo1 d1 = new Demo1();
-        // d1.doSomeThing();
-        d1.doSomeThing(1);
-        System.out.println();
-        System.out.println(Demo1.f(2));
+        // Demo1 d1 = new Demo1();
+        // // d1.doSomeThing();
+        // d1.doSomeThing(1);
+        // System.out.println();
+        // System.out.println(Demo1.f(2));
+        int i = new Demo1().doSomeThing_1();
+
+        System.out.println(i);
+    }
+
+    public int doSomeThing_1() {
+        int i = 0;
+        try {
+            i = 1;
+            return i;
+        } catch (Exception ex) {
+            System.err.println("error!");
+            i = 2;
+            return i;
+        } finally {
+            i = 3;
+            return i;
+        }
     }
 
     public void doSomeThing() {
