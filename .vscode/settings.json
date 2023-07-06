@@ -1,4 +1,5 @@
 {
     "java.configuration.updateBuildConfiguration": "disabled",
-    "java.home": "D:\\jdk\\11\\jdk-11"
+    "java.home": "D:\\jdk\\11\\jdk-11",
+    "java.compile.nullAnalysis.mode": "automatic"
 }

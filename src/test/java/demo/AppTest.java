@@ -1,66 +1,25 @@
 package demo;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
-
-import org.hamcrest.collection.ArrayMatching;
-import org.junit.Test;
-
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Test;
 
-/**
- * Unit test for simple App.
- */
+import java.io.*;
+
 @Slf4j
 public class AppTest {
-    /**
-     * Rigorous Test :-)
-     */
-    @Test
-    public void shouldAnswerWithTrue() {
-        assertTrue(true);
-    }
+ 
+
+    private static final String TEMP_FOLDER = "D:\\iotests\\javaio";
 
     @Test
-    public void testWithCopyWriteList() {
-        CopyOnWriteArrayList<Integer> numbers = new CopyOnWriteArrayList<>(new Integer[] { 1, 3, 5, 8 });
-
-        Iterator<Integer> iterator = numbers.iterator();
-
-        numbers.add(10);
-
-        List<Integer> result = new LinkedList<>();
-
-        assertTrue(
-                ArrayMatching.arrayContainingInAnyOrder(new Integer[] { 1, 3, 5, 8, 10 })
-                        .matches(numbers.toArray(new Integer[5])),
-                "all match");
+    public void inputTest() throws IOException {
+        String demo = "hello io\r";
+        File f = new File(TEMP_FOLDER +"\\demo1.txt");
+        FileOutputStream fos = new FileOutputStream(f,true);
+        BufferedOutputStream bos = new BufferedOutputStream(fos);
+        bos.write(demo.getBytes());
+        bos.flush();
+        bos.close();
     }
-
-    @Test
-    public void testWithCopyWriteList2() {
-        CopyOnWriteArrayList<Integer> numbers = new CopyOnWriteArrayList<>(new Integer[] { 1, 3, 5, 8 });
-
-        Iterator<Integer> iterator = numbers.iterator();
-
-        numbers.add(10);
-
-        List<Integer> result = new LinkedList<>();
-
-        iterator.forEachRemaining(result::add);
-
-     
-        log.info("list -> [{}]", result.toString());
-
-        Iterator<Integer> iterator2 = numbers.iterator();
-        List<Integer> result2 = new LinkedList<>();
-
-        iterator2.forEachRemaining(result2::add);
-
-        log.info("list2 -> [{}]", result2.toString());
-    }
+  
 }
